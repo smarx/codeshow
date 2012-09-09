@@ -1,0 +1,4 @@
+venv/
+dist/
+CodeShow.egg-info/
+*.pyc

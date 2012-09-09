@@ -1,0 +1,48 @@
+html { font-size: 24px; background-color: #272822; font-family: Helvetica, Arial; color: #f0f0f0; }
+body { margin-top: 60px; }
+.highlight p { padding: .125em 0; margin: 0; }
+.highlight p.blank { height: 1em; }
+.highlight p { padding: .125em 0 .125em 1em; margin: 0; text-indent: -1em; }
+.highlight p:hover { background-color: #49483e; }
+.highlight p.blank:hover { background-color: inherit; }
+.highlight { padding: 0 10px; }
+.highlight.readme p:hover { background-color: inherit; }
+h2.path a, ul.directory a { color: white; text-decoration: none; }
+a { color: #257FBD; }
+h2.path a:hover, ul.directory a:hover { text-decoration: underline; }
+code, ul.directory, .highlight { font-family: Consolas, fixed; }
+.readme code, .readme pre { border: 1px solid gray; border-radius: 5px; background-color: #202020; }
+.readme code { padding: 3px 10px; }
+.readme pre { padding: 12px 20px; }
+.readme pre code { padding: 0; border: none; }
+ul.directory { font-size: 36px; list-style: none; font-weight: bold; color: #3d3d3d; }
+h2.path { color: white; position: fixed; top: 0; right: 0; margin: 0; padding: 5px; background-color: #257FBD; }
+.highlight p.i1 { padding-left: 2em; }
+.highlight p.i2 { padding-left: 3em; }
+.highlight p.i3 { padding-left: 4em; }
+.highlight p.i4 { padding-left: 5em; }
+.highlight p.i5 { padding-left: 6em; }
+.highlight p.i6 { padding-left: 7em; }
+.highlight p.i7 { padding-left: 8em; }
+.highlight p.i8 { padding-left: 9em; }
+.highlight p.i9 { padding-left: 10em; }
+.highlight p.i10 { padding-left: 11em; }
+.highlight p.i11 { padding-left: 12em; }
+.highlight p.i12 { padding-left: 13em; }
+.highlight p.i13 { padding-left: 13em; }
+.highlight p.i14 { padding-left: 14em; }
+.highlight p.i15 { padding-left: 15em; }
+.highlight p.i16 { padding-left: 16em; }
+.highlight p.i17 { padding-left: 17em; }
+.highlight p.i18 { padding-left: 18em; }
+.highlight p.i19 { padding-left: 19em; }
+.highlight p.i20 { padding-left: 20em; }
+.highlight p.i21 { padding-left: 21em; }
+.highlight p.i22 { padding-left: 22em; }
+.highlight p.i23 { padding-left: 23em; }
+.highlight p.i24 { padding-left: 24em; }
+.highlight p.i25 { padding-left: 25em; }
+.highlight p.i26 { padding-left: 26em; }
+.highlight p.i27 { padding-left: 27em; }
+.highlight p.i28 { padding-left: 28em; }
+{{ pygments_styles }}

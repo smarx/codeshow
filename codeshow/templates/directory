@@ -1,0 +1,41 @@
+<!doctype html>
+	<html>
+	<head>
+	    <link rel="stylesheet" href="{{relcss}}">
+	    {% if reldir != '' %}
+	    <title>{{reldir}}</title>
+	    {% else %}
+	    <title>CodeShow</title>
+	    {% endif %}
+	</head>
+	<body>
+		{% if reldir != '' %}
+		<h2 class="path">{{reldir}}</h2>
+		{% endif %}
+		<ul class="directory">
+
+		{% for name, active in directories %}
+			{% if active %}
+			<li><a href="{{relroot}}/tree/{{reldir}}{{name}}.html">{{name}}/</a></li>
+			{% else %}
+			<li>{{name}}/</li>
+			{% endif %}
+		{% endfor %}
+
+		{% for name, active in files %}
+			{% if active %}
+			<li><a href="{{relroot}}/file/{{reldir}}{{name}}{{'.html' if use_extensions}}">{{name}}</a></li>
+			{% else %}
+			<li>{{name}}</li>
+			{% endif %}
+		{% endfor %}
+
+		</ul>
+		{% if readme %}
+		<hr />
+		<div class="readme{{ ' highlight' if not is_markdown }}">
+{{readme}}
+		</div>
+		{% endif %}
+	</body>
+<html>

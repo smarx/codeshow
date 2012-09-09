@@ -1,0 +1,9 @@
+<!doctype html>
+<html>
+<head>
+	<title>{{ name }}</title>
+	<link rel="stylesheet" href="{{ cssfile }}" type="text/css">
+</head>
+<body>
+	<h2 class="path"><a href="{{ raw_path }}">{{ name }}</a></h2>
+	<div class="highlight">
