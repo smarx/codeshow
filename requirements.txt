@@ -1,3 +1,4 @@
 Jinja2==2.6
 Markdown==2.2.0
 Pygments==1.5
+glob2==0.3

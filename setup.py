@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	name = 'CodeShow',
-	version = '0.1.0',
+	version = '0.2.1',
 	url = 'http://codeshow.site44.com',
 	license = open('LICENSE').read(),
 	author = 'Steve Marx',
@@ -12,6 +12,5 @@ setup(
 	packages = ['codeshow'],
 	entry_points = { 'console_scripts': ['codeshow = codeshow.cmdline:main']},
 	install_requires = map(str.rstrip, open('requirements.txt').readlines()),
-	package_data = {'templates': ['templates/*']},
 	include_package_data = True
 )

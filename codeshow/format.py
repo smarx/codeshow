@@ -8,8 +8,8 @@ from . import templates
 class CodeShowFormatter(pygments.formatters.html.HtmlFormatter):
 	def __init__(self, **options):
 		pygments.formatters.html.HtmlFormatter.__init__(self, **options)
-		self.raw_path = options['raw_path']
-		self.use_extensions = options['use_extensions']
+		self.raw_path = options.get('raw_path', '')
+		self.use_extensions = options.get('use_extensions', True)
 
 	def _format_lines(self, tokensource):
 		for i, t in pygments.formatters.html.HtmlFormatter._format_lines(self, tokensource):

@@ -17,12 +17,13 @@ for name in os.listdir(templates_dir):
 import format
 
 class Generator:
-	def __init__(self, source_directory, output_directory, ignore_paths, site44):
+	def __init__(self, source_directory, output_directory, ignore_paths, site44, custom_types):
 		self.source_directory = source_directory
 		self.output_directory = output_directory
 		self.ignore_paths = ignore_paths
 		self.site44 = site44
 		self.use_extensions = not site44
+		self.custom_types = custom_types
 
 	def generate(self):
 		if self.site44:
@@ -75,7 +76,10 @@ class Generator:
 			raw_path=os.path.relpath(output_raw, os.path.dirname(output_file))+raw_extension,
 			use_extensions=self.use_extensions)
 
-		try: lexer = pygments.lexers.get_lexer_for_filename(source_file)
+		name_for_lexer = source_file
+		extension = os.path.splitext(source_file)[1].lstrip('.').lower()
+		if extension in self.custom_types: name_for_lexer = '.' + self.custom_types[extension]
+		try: lexer = pygments.lexers.get_lexer_for_filename(name_for_lexer)
 		except: lexer = pygments.lexers.TextLexer()
 
 		with file(source_file) as infile: code = infile.read().decode('utf-8-sig')
@@ -106,7 +110,7 @@ class Generator:
 				if os.path.isfile(os.path.join(dirpath, name)):
 					filename = name
 			if filename is not None:
-				with file(filename) as f:
+				with file(os.path.join(dirpath, filename)) as f:
 					formatter = format.CodeShowFormatter(encoding='utf-8', style=pygments.styles.monokai.MonokaiStyle, nowrap=True)
 					readme = pygments.highlight(f.read().decode('utf-8-sig'), pygments.lexers.TextLexer(), formatter)
 
