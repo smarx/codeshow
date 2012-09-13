@@ -8,7 +8,7 @@ import glob2
 import itertools
 
 def main():
-	parser = argparse.ArgumentParser(version='0.2.1', description='CodeShow turns a directory of code into a static website suitable for use in presentations.', usage='codeshow [path] [<options>]')
+	parser = argparse.ArgumentParser(version='0.2.2', description='CodeShow turns a directory of code into a static website suitable for use in presentations.', usage='codeshow [path] [<options>]')
 	parser.add_argument(metavar='PATH', dest='source_directory', default='.', nargs='?', help='path to the code project')
 	parser.add_argument('-o, --output', metavar='PATH', dest='output_directory', required=False, default='output', help='output path for generated website')
 	parser.add_argument('-i, --ignore', metavar='PATH', dest='ignore_paths', required=False, help='relative path to skip, * and ** globs allowed', action='append', default=[])

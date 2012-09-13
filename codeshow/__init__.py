@@ -66,14 +66,14 @@ class Generator:
 		html_extension = self.use_extensions and '.html' or ''
 		raw_extension = self.use_extensions and '.txt' or ''
 
-		relcss = os.path.relpath(self.css_file, os.path.dirname(output_file))
+		relcss = os.path.relpath(self.css_file, os.path.dirname(output_file)).replace('\\', '/')
 
 		formatter = format.CodeShowFormatter(encoding='utf-8',
 			style=pygments.styles.monokai.MonokaiStyle,
 			cssfile=relcss,
 			noclobber_cssfile=True,
-			title=relpath,
-			raw_path=os.path.relpath(output_raw, os.path.dirname(output_file))+raw_extension,
+			title=relpath.replace('\\', '/'),
+			raw_path=os.path.relpath(output_raw, os.path.dirname(output_file)).replace('\\', '/')+raw_extension,
 			use_extensions=self.use_extensions)
 
 		name_for_lexer = source_file
@@ -116,9 +116,9 @@ class Generator:
 
 		with file(index_path, 'wt') as f:
 			f.write(templates['directory'].render(
-				reldir = reldir != '.' and reldir + '/' or '',
-				relroot = os.path.relpath(self.output_directory, os.path.dirname(index_path)),
-				relcss = os.path.relpath(self.css_file, os.path.dirname(index_path)),
+				reldir = reldir != '.' and reldir.replace('\\', '/') + '/' or '',
+				relroot = os.path.relpath(self.output_directory, os.path.dirname(index_path)).replace('\\', '/'),
+				relcss = os.path.relpath(self.css_file, os.path.dirname(index_path)).replace('\\', '/'),
 				directories = [(name, not os.path.islink(os.path.join(dirpath, name))) for name in dirnames],
 				files = [(name, name in included_files) for name in filenames],
 				readme = readme,

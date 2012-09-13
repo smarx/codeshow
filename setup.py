@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	name = 'CodeShow',
-	version = '0.2.1',
+	version = '0.2.2',
 	url = 'http://codeshow.site44.com',
 	license = open('LICENSE').read(),
 	author = 'Steve Marx',
