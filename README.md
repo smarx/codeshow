@@ -7,7 +7,7 @@ Passing `--site44` generates content optimized for hosting on Site44:
 1. No .html or .txt file extensions are appended to files. This makes for prettier URLs.
 2. A `mimetypes.site44.txt` file is generated that enforces HTML and plain text content types for those pretty URLs.
 
-See [codeshow.site44.com](http://codeshare.site44.com) for an example of the output, or get the code at [github.com/smarx/codeshow](https://github.com/smarx/codeshow).
+See [codeshow.site44.com](http://codeshow.site44.com) for an example of the output, or get the code at [github.com/smarx/codeshow](https://github.com/smarx/codeshow).
 
 ## Installation
 
